@@ -22,12 +22,14 @@ class UnionFind(ABC):
         [bool]: True if two elements are connected else False
     """
     def __init__(self, number_of_elements):
-        """Initialize array according to the number of elements provided
+        """Initialize array and number of connected components according
+        to the number of elements provided
 
         Args:
             number_of_elements (int): Total number of integers in the workspace
         """
         self.id_store = number_of_elements
+        self.count = number_of_elements
 
     @property
     def id_store(self):
@@ -46,6 +48,24 @@ class UnionFind(ABC):
             number_of_elements (int): Total number of integers in the workspace
         """
         self._id_store = list((i for i in range(number_of_elements)))
+
+    @property
+    def count(self):
+        """Get number of connected components
+
+        Returns:
+            int: returns the number of connected components
+        """
+        return self._count
+
+    @count.setter
+    def count(self, number_of_elements):
+        """Set connected component count to the total number of elements
+
+        Args:
+            number_of_elements (int): total number of elements
+        """
+        self._count = number_of_elements
 
     def _validate(self, index):
         """Validate if the element is within 0 and number_of_elements
