@@ -21,7 +21,6 @@ class UnionFind(ABC):
     Returns:
         [bool]: True if two elements are connected else False
     """
-    @abstractmethod
     def __init__(self, number_of_elements):
         """Initialize array according to the number of elements provided
 
@@ -31,7 +30,6 @@ class UnionFind(ABC):
         self.id_store = number_of_elements
 
     @property
-    @abstractmethod
     def id_store(self):
         """Get id_store (array consisting of canonical parents of each element)
 
@@ -41,7 +39,6 @@ class UnionFind(ABC):
         return self._id_store
 
     @id_store.setter
-    @abstractmethod
     def id_store(self, number_of_elements):
         """Set id_store to default values of each element
 
@@ -50,7 +47,6 @@ class UnionFind(ABC):
         """
         self._id_store = list((i for i in range(number_of_elements)))
 
-    @abstractmethod
     def _validate(self, index):
         """Validate if the element is within 0 and number_of_elements
 
@@ -73,7 +69,6 @@ class UnionFind(ABC):
             index (int): element to find parent of
         """
 
-    @abstractmethod
     def connected(self, index_1, index_2):
         """Check if two elements are connected
 
