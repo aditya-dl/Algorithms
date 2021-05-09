@@ -1,0 +1,1 @@
+## Algorithms implemented to solve the dynamic connectivity problem
